@@ -12,6 +12,9 @@ module.exports = postcss.plugin('postcss-brewbox-plugin', function (opts) {
         res += '#FDB947'
       } else if (d.value === 'wine') {
         res += '#37052A'
+      } else {
+        res += d.value
+        console.warn('Warning:', d.value + ' is not valid.')
       }
 
       return res;
