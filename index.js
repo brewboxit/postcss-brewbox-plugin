@@ -1,13 +1,28 @@
-var postcss = require('postcss');
+var postcss = require('postcss')
+
+var regex = /^brewbox$/
 
 module.exports = postcss.plugin('postcss-brewbox-plugin', function (opts) {
-    opts = opts || {};
+    opts = opts || {}
 
-    // Work with options here
+    function parseBrew(d) {
+      var res = "background: "
+      console.log(d.value)
 
-    return function (root, result) {
+      if (d.value === "beer") {
+        res += "#e79244"
+      } else if (d.value === "wine") {
+        res += "red"
+      }
 
-        // Transform CSS AST here
+      return res;
+    }
 
-    };
-});
+    return function (root) {
+      root.walkDecls(function(decl) {
+        if(decl.prop.match(regex)) {
+          decl.replaceWith(parseBrew(decl))
+        }
+      })
+    }
+})
