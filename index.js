@@ -6,7 +6,7 @@ module.exports = postcss.plugin('postcss-brewbox-plugin', function (opts) {
     opts = opts || {}
 
     function parseBrew(d) {
-      var res = 'background: '
+      var res = 'background-color: '
       console.log(d.value)
 
       if (d.value === 'beer') {
