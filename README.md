@@ -8,13 +8,15 @@
 
 ```css
 .foo {
-    /* Input example */
+  brewbox: beer;
+  brewbox: wine;
 }
 ```
 
 ```css
 .foo {
-  /* Output example */
+  background-color: #FDB947;
+  background-color: #37052A;
 }
 ```
 

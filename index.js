@@ -10,9 +10,9 @@ module.exports = postcss.plugin('postcss-brewbox-plugin', function (opts) {
       console.log(d.value)
 
       if (d.value === 'beer') {
-        res += '#e79244'
+        res += '#FDB947'
       } else if (d.value === 'wine') {
-        res += 'red'
+        res += '#37052A'
       }
 
       return res;
