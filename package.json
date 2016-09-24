@@ -1,0 +1,36 @@
+{
+  "name": "postcss-brewbox-plugin",
+  "version": "0.0.0",
+  "description": "PostCSS plugin to demonstrate how to write a PostCSS plugin @ Brewbox",
+  "keywords": [
+    "postcss",
+    "css",
+    "postcss-plugin",
+    "cobox",
+    "brewbox",
+    "talk"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": "brewboxit/postcss-brewbox-plugin",
+  "bugs": {
+    "url": "https://github.com/brewboxit/postcss-brewbox-plugin/issues"
+  },
+  "homepage": "https://github.com/brewboxit/postcss-brewbox-plugin",
+  "dependencies": {
+    "postcss": "^5.2.0"
+  },
+  "devDependencies": {
+    "ava": "^0.16.0",
+    "eslint": "^3.4.0",
+    "eslint-config-postcss": "^2.0.2"
+  },
+  "scripts": {
+    "start": "ava && eslint *.js",
+    "test": "ava",
+    "lint": "eslint *.js"
+  },
+  "eslintConfig": {
+    "extends": "eslint-config-postcss/es5"
+  }
+}
