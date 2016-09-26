@@ -1,28 +1,26 @@
-var postcss = require('postcss')
+const postcss = require('postcss')
 
-var regex = /^brewbox$/
+const regex = /^brewbox$/
 
-module.exports = postcss.plugin('postcss-brewbox-plugin', function (opts) {
-    opts = opts || {}
+module.exports = postcss.plugin('postcss-brewbox-plugin', () => {
+  function parseBrew(d) {
+    let res = 'background-color: '
 
-    function parseBrew(d) {
-      var res = 'background-color: '
-
-      if (d.value === 'beer') {
-        res += '#FDB947'
-      } else if (d.value === 'wine') {
-        res += '#37052A'
-      } else {
-        res += d.value
-        console.warn('Warning:', d.value + ' is not valid.')
-      }
-
-      return res;
+    if (d.value === 'beer') {
+      res += '#FDB947'
+    } else if (d.value === 'wine') {
+      res += '#37052A'
+    } else {
+      res += d.value
+      console.warn('Warning:', d.value + ' is not valid.') //eslint-disable-line
     }
 
-    return function (root) {
-      root.walkDecls(regex, function(decl) {
-        decl.replaceWith(parseBrew(decl))
-      })
-    }
+    return res;
+  }
+
+  return (root) => {
+    root.walkDecls(regex, (decl) => {
+      decl.replaceWith(parseBrew(decl))
+    })
+  }
 })

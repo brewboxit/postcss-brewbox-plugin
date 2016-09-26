@@ -21,9 +21,13 @@
     "postcss": "^5.2.0"
   },
   "devDependencies": {
-    "ava": "^0.16.0",
     "eslint": "^3.4.0",
-    "eslint-config-postcss": "^2.0.2"
+    "eslint-config-airbnb-base": "^8.0.0",
+    "eslint-config-postcss": "^2.0.2",
+    "eslint-plugin-import": "^1.16.0"
+  },
+  "peerDependencies": {
+    "ava": "^0.16.0"
   },
   "scripts": {
     "start": "ava && eslint *.js",
