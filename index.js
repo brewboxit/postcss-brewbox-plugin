@@ -15,7 +15,7 @@ module.exports = postcss.plugin('postcss-brewbox-plugin', () => {
       console.warn('Warning:', d.value + ' is not valid.') //eslint-disable-line
     }
 
-    return res;
+    return res
   }
 
   return (root) => {
