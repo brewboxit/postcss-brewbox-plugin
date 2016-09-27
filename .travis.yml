@@ -1,4 +1,5 @@
 language: node_js
+before_script:
+  - npm install -g ava
 node_js:
   - "6"
-  - "5"
